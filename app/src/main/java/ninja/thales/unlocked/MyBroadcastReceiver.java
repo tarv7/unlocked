@@ -40,7 +40,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         long resultado = db.insert("desbloqueios", null, values);
 
         if(resultado == -1){
-            Toast.makeText(context, "Deu erro ao salvar<Unlocked>", Toast.LENGTH_LONG);
+            Toast.makeText(context, R.string.erroSalvar, Toast.LENGTH_LONG);
         }
     }
 }

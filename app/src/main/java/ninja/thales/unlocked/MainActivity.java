@@ -1,9 +1,11 @@
 package ninja.thales.unlocked;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +21,8 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseHelper helper;
+    private AlertDialog alerta;
+    private Context it = this;
     public Button bt;
 
     @Override
@@ -30,7 +34,21 @@ public class MainActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                excluirDatas();
+                AlertDialog.Builder builder = new AlertDialog.Builder(it);
+                builder.setTitle(R.string.confirm);
+                builder.setMessage(R.string.textoConfirmacao);
+
+                builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        excluirDatas();
+                    }
+                });
+
+                builder.setNegativeButton(R.string.nao, null);
+
+                builder.create();
+                builder.show();
             }
         });
 

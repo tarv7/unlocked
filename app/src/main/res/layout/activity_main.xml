@@ -32,7 +32,7 @@
             android:id="@+id/excluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Excluir tudo"
+            android:text="@string/excluirTudo"
             android:layout_gravity="center"/>
 
     </LinearLayout>

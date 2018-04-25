@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Unlocked</string>
+    <string name="sim">sí</string>
+    <string name="nao">no</string>
+    <string name="textoConfirmacao">¿Desea realmente eliminar los registros?</string>
+    <string name="excluirTudo">Eliminar todo</string>
+    <string name="erroSalvar">De error al guardar (Unlocked)</string>
+    <string name="confirm">confirmación</string>
+</resources>
