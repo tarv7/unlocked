@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -26,14 +27,14 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     }
 
     public void salvarData(Context context){
-        Calendar calendar = Calendar.getInstance();
         String dataFinal;
         SQLiteDatabase db = helper.getWritableDatabase();
 
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss  -  dd/MM/YYYY  -  EEE");
+
         ContentValues values = new ContentValues();
-        dataFinal = calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH) + "/" +
-                    calendar.get(Calendar.YEAR) + "   -   " + calendar.get(Calendar.HOUR_OF_DAY) + ":" +
-                    calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND);
+        dataFinal = sdf.format(calendar.getTime());
         values.put("data", dataFinal);
 
         long resultado = db.insert("desbloqueios", null, values);
