@@ -31,7 +31,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         SQLiteDatabase db = helper.getWritableDatabase();
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss  -  dd/MM/YYYY  -  EEE");
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss  -  dd/MM/yyyy  -  EEEE");
 
         ContentValues values = new ContentValues();
         dataFinal = sdf.format(calendar.getTime());
